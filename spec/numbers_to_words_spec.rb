@@ -17,9 +17,14 @@ describe('Fixnum#to_word') do
     expect(17.to_word()).to(eq('seventeen'))
   end
 
-  # Translates a two digit number above twenty thats not a multiple of ten.
-  it("translates a two digit number above 20 thats not a multiple of 10.") do
+  # Translates a number not in the hash.
+  it("translates a number not in the hash.") do
     expect(23.to_word()).to(eq('twenty-three'))
   end
+
+  # # Translates a three digit number to words that is not in the hash.
+  # it("translates a three digit number to words that is not in the hash.") do
+  #   expect(101.to_word()).to(eq('one-hundred-and-one'))
+  # end
 
 end
