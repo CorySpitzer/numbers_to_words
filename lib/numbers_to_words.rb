@@ -36,11 +36,11 @@ class Fixnum
 
     if number_words.include?(self)
       number_words.fetch(self)
-    else
-
+    elsif self.<(100)
+      last_digit = self.%(10)
+      mult_10 = self.-(last_digit)
+      mult_10.to_word() + '-' + last_digit.to_word()
     end
-
-
 
   end
 end
