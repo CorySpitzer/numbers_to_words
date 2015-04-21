@@ -4,6 +4,10 @@ require('numbers_to_words')
 describe('Fixnum#to_word') do
 
   # Translates a single digit number into it's word form.
+  it("translates 0 to 'zero'") do
+    expect(0.to_word()).to(eq('zero'))
+  end
+
   it("translates 1 to 'one'") do
     expect(1.to_word()).to(eq('one'))
   end
