@@ -33,6 +33,14 @@ class Fixnum
                       2 => "two",
                       1 => "one"
                     }
-    number_words.fetch(self)
+    if self.>=(20)
+      ones_digit = self.%(10)
+      mult_10 = self.-(ones_digit)
+      ones_word = number_words.fetch(ones_digit)
+      mult_10_word = number_words.fetch(mult_10)
+      mult_10_word.concat('-'+ones_word)
+    else
+      number_words.fetch(self)
+    end
   end
 end
