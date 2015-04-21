@@ -40,6 +40,10 @@ class Fixnum
       last_digit = self.%(10)
       mult_10 = self.-(last_digit)
       mult_10.to_word() + '-' + last_digit.to_word()
+    elsif self.<(1000)
+      last_2_digits = self.%(100)
+      first_digit = self.to_s()[0].to_i()
+      first_digit.to_word() + '-hundred-and-' + last_2_digits.to_word()
     end
 
   end
