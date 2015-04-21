@@ -35,6 +35,14 @@ class Fixnum
                     }
     if number_words.include?(self)
       number_words.fetch(self)
+    else
+      int_str = self.to_s()
+      length = int_str.length()
+      if length == (2)
+        ones_digit = int_str[1].to_i()
+        mult_10 = self.-(ones_digit)
+        number_words.fetch(mult_10).concat('-' + number_words.fetch(ones_digit))
+      end
     end
 
     # if self.>(100)
