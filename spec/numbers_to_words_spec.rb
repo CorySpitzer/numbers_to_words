@@ -25,4 +25,8 @@ describe('Fixnum#to_word') do
     expect(101.to_word()).to(eq('one-hundred-and-one'))
   end
 
+  it("translates another three digit number that is not in the hash.") do
+    expect(231.to_word()).to(eq('two-hundred-and-thirty-one'))
+  end
+
 end
