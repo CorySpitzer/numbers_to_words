@@ -31,13 +31,21 @@ class Fixnum
                       4 => "four",
                       3 => "three",
                       2 => "two",
-                      1 => "one"
-                    }
+                      1 => "one",
+                      0 => "zero" }
+
     def trans3(num_str, number_hash)
       first_digit = number_hash.fetch(num_str[0].to_i())
-      mult_10 = number_hash.fetch((num_str[1].concat('0')).to_i)
-      last_digit = number_hash.fetch(num_str[2].to_i())
-      (first_digit + '-hundred-and-' + mult_10 + '-' + last_digit)
+      if num_str[1,2].to_i.>(20)
+        mult_10 = number_hash.fetch((num_str[1].concat('0')).to_i)
+        last_digit = number_hash.fetch(num_str[2].to_i())
+        last_2_digits =  mult_10 + '-' + last_digit
+      elsif num_str[1,2].to_i.>(10)
+        last_2_digits = number_hash.fetch(num_str[1,2].to_i)
+      else
+        last_2_digits = number_hash.fetch(num_str[2].to_i)
+      end
+      (first_digit + '-hundred-and-' + last_2_digits)
     end
 
     if number_words.include?(self)
