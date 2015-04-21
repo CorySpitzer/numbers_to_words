@@ -17,14 +17,12 @@ describe('Fixnum#to_word') do
     expect(17.to_word()).to(eq('seventeen'))
   end
 
-  # Translates a number not in the hash.
   it("translates a number not in the hash.") do
     expect(23.to_word()).to(eq('twenty-three'))
   end
 
-  # # Translates a three digit number to words that is not in the hash.
-  # it("translates a three digit number to words that is not in the hash.") do
-  #   expect(101.to_word()).to(eq('one-hundred-and-one'))
-  # end
+  it("translates a three digit number that is not in the hash.") do
+    expect(101.to_word()).to(eq('one-hundred-and-one'))
+  end
 
 end
