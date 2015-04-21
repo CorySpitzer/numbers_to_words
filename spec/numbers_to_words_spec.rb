@@ -38,4 +38,8 @@ describe('Fixnum#to_word') do
     expect(316.to_word()).to(eq('three-hundred-and-sixteen'))
   end
 
+  it("translates 400 to 'four-hundred'") do
+    expect(400.to_word()).to(eq('four-hundred'))
+  end
+
 end
