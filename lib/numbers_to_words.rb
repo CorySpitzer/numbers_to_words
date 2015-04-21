@@ -43,10 +43,11 @@ class Fixnum
     elsif self.<(1000)
       last_2_digits = self.%(100)
       first_digit = self.to_s()[0].to_i()
+      first_word = first_digit.to_word()
       if last_2_digits == 0
-        first_digit.to_word() + '-hundred'
+        first_word + '-hundred'
       else
-        first_digit.to_word() + '-hundred-and-' + last_2_digits.to_word()
+        first_word + '-hundred-and-' + last_2_digits.to_word()
       end
     end
 
