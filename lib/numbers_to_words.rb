@@ -33,6 +33,10 @@ class Fixnum
                       2 => "two",
                       1 => "one"
                     }
+    def trans3(int)
+      'one-hundred-and-one'
+    end
+
     if number_words.include?(self)
       number_words.fetch(self)
     else
@@ -42,8 +46,12 @@ class Fixnum
         ones_digit = int_str[1].to_i()
         mult_10 = self.-(ones_digit)
         number_words.fetch(mult_10).concat('-' + number_words.fetch(ones_digit))
+      elsif length == (3)
+        trans3(self)
       end
     end
+
+
 
     # if self.>(100)
     #   # ones_digit = self.%(10)
